@@ -3,7 +3,7 @@ name: Docker Workflow
 on:
   workflow_dispatch:
   push:
-    branches: [dev, stg, prd]
+    branches: [main]
     paths-ignore:
       - 'README.md'
       - '.gitignore'
