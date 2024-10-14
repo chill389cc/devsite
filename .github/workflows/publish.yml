@@ -10,7 +10,7 @@ on:
 
 env:
   node_version: "22.x"
-  release_version: "v1.0.0"
+  release_version: "v1.0.2"
   FORCE_COLOR: 3
 
 jobs:
