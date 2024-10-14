@@ -1,4 +1,4 @@
-name: Docker Workflow
+name: Publish 'chill389cc/devsite:${{ env.release_version }}'
 
 on:
   workflow_dispatch:
