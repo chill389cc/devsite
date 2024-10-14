@@ -7,7 +7,7 @@ on:
     paths:
       - 'app/**'
       - 'docker-compose.yml'
-      - '.github/workflows/ci-app.yml'
+      - '.github/workflows/ci.yml'
 
 env:
   node_version: "22.x"
