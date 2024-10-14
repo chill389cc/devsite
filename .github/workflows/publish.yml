@@ -7,6 +7,11 @@ on:
     paths-ignore:
       - 'README.md'
       - '.gitignore'
+
+env:
+  node_version: "22.x"
+  FORCE_COLOR: 3
+
 jobs:
   build:
     name: Build & Lint
