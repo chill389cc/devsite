@@ -17,6 +17,10 @@ async function main() {
         reply.sendFile('index.html')
     })
 
+    app.get('/feat', function (req: FastifyRequest, reply: FastifyReply) {
+        reply.send('this is a new featres!')
+    })
+
     const port = process.env.PORT == null ? 3000 : Number.parseInt(process.env.PORT)
     app.listen({ port, host: '0.0.0.0' }, (err, address) => {
         if (err) throw err
