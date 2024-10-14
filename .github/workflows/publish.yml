@@ -1,4 +1,4 @@
-name: Publish 'chill389cc/devsite:${{ env.release_version }}'
+name: Publish 'chill389cc/devsite'
 
 on:
   workflow_dispatch:
@@ -38,9 +38,12 @@ jobs:
         run: npm run build
 
   build_and_deploy:
-    name: Push Docker image to Docker hub
+    name: Push 'chill389cc/devsite:${{ env.release_version }}' to Docker Hub
     runs-on: ubuntu-latest
     needs: [build]
+    environment:
+      name: test123?
+      url: https://google.com
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -62,3 +65,6 @@ jobs:
           push: true
           tags: chill389cc/devsite:${{ env.release_version }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Print new version
+        run: echo "version=$(terraform output -raw codedeploy_app_name)" >> $GITHUB_OUTPUT
