@@ -9,20 +9,16 @@ async function main() {
 
     console.log('Happy developing ✨')
 
-    console.log(path.join(__dirname, 'public'))
-
     app.register(fastifyStatic, {
-        root: path.join(__dirname, 'public'),
-        // prefix: '/public/', // optional: default '/'
-        // constraints: { host: 'example.com' } // optional: default {}
+        root: path.join(__dirname, '../public'),
     })
 
     app.get('/', function (req: FastifyRequest, reply: FastifyReply) {
         reply.sendFile('index.html')
-        // reply.download('index.html') // sending path.join(__dirname, 'public', 'myHtml.html') directly with custom filename
     })
 
-    app.listen({ port: 3000 }, (err, address) => {
+    const port = process.env.PORT == null ? 3000 : Number.parseInt(process.env.PORT)
+    app.listen({ port, host: '0.0.0.0' }, (err, address) => {
         if (err) throw err
         console.log(`Server is now listening on ${address}`)
     })
