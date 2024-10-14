@@ -17,8 +17,8 @@ async function main() {
         reply.sendFile('index.html')
     })
 
-    app.get('/feat', function (req: FastifyRequest, reply: FastifyReply) {
-        reply.send('this is a new featres!')
+    app.get('/prequels', function (req: FastifyRequest, reply: FastifyReply) {
+        reply.sendFile('prequels_script.html')
     })
 
     const port = process.env.PORT == null ? 3000 : Number.parseInt(process.env.PORT)
