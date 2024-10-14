@@ -24,8 +24,12 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - name: npm ci
-        working-directory: src
+        working-directory: app
         run: npm ci --prefer-offline
+
+      - name: npm run build
+        working-directory: app
+        run: npm run build
 
   build_and_deploy:
     name: Push Docker image to Docker hub

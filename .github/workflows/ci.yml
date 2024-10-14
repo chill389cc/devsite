@@ -29,18 +29,16 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - name: npm ci
-        working-directory: src
+        working-directory: app
         run: npm ci --prefer-offline
 
 #      - name: npm test
 #        working-directory: src
 #        run: npm test
 #
-#      - name: Report test coverage to Codecov
-#        uses: codecov/codecov-action@v4
-#        if: env.CODECOV_TOKEN
-#        env:
-#          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: npm run build
+        working-directory: app
+        run: npm run build
 
 #  lint:
 #    name: Lint
