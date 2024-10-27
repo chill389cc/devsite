@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "node -r ts-node/register -r dotenv/config src/index.ts"
+    "dev": "node -r ts-node/register -r dotenv/config src/index.ts",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix"
   },
   "dependencies": {
     "@fastify/static": "^8.0.1",
@@ -15,7 +17,13 @@
     "@types/node": "^22.7.5",
     "dotenv": "^16.4.5",
     "ts-node": "^10.9.2",
+    "ts-standard": "^12.0.2",
     "typescript": "^5.5.3"
   },
-  "private": true
+  "private": true,
+  "ts-standard": {
+    "ignore": [
+      "dist"
+    ]
+  }
 }
