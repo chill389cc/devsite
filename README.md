@@ -14,3 +14,5 @@ This is a simple site with a stupid name that I'll use to host various things
 - Show users their IP for fun
 - Move route and redirect code into separate files for separation of concerns
 - Add unit tests for things that need to work or else other integrations will stop working
+- Lock wishlist access behind password
+- Add a sticky bar to the prequel site that shows you which movie you're in and maybe how far into the movie you are
