@@ -1,6 +1,8 @@
 import fastify, { type FastifyRequest, type FastifyReply } from "fastify";
 import fastifyStatic from "@fastify/static";
 import path from "node:path";
+import { shortenUrlRoute } from "./url_shortner/url_redirect";
+import { createRedirectRoute } from "./url_shortner/create_redirect";
 
 async function main(): Promise<void> {
   const app = fastify({
@@ -24,6 +26,9 @@ async function main(): Promise<void> {
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQExuHz0hIgVbkTxSV_jEMjn3NNcRMWMR9m6ialFSNObfyaM3VEtkjgO30w7ttIe5TtNaMeUF6sjk3J/pubhtml#",
     );
   });
+
+  app.route(shortenUrlRoute);
+  app.route(createRedirectRoute);
 
   const port =
     process.env.PORT == null ? 3000 : Number.parseInt(process.env.PORT);
