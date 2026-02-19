@@ -1,4 +1,4 @@
-FROM node:22.9.0-slim
+FROM node:22.22.0-slim
 WORKDIR /usr/app
 
 # Copy config files
